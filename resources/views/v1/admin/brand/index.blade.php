@@ -9,7 +9,7 @@
                     <p class="text-center"><b>Brand</b></p>                    
                     
                     <div class=""></div>
-                            <a href="{{ route('brands.create') }}" class="bg-emerald-700 hover:bg-emerald-500 text-white font-bold py-2 px-2 rounded-md contents-end">
+                            <a href="{{ route('brands.create') }}" class="bg-emerald-700 hover:bg-emerald-500 text-white font-bold py-2 px-2 rounded-md text-sm">
                                 Add New
                             </a>
                         </div>

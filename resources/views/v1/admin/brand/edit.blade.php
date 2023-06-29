@@ -18,7 +18,7 @@
   <div class="row">
       <div class="col">
           <div class="card border-primary mb-3 py-3 px-3" style="width: 50rem">
-              <p class="text-center"><b>Brand Input</b></p>                    
+              <p class="text-center"><b>Brand Edit</b></p>                    
               <form class="w-full max-w-lg md:items-center" action="{{ route('brands.update', $brand->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')

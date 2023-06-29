@@ -1,31 +1,34 @@
 @extends('layouts.v1.admin.main')
 
 @section('admin')
-@if ($errors->any())
+  <div class="container">
+    @if ($errors->any())
 
-<div class="alert alert-danger">
-    <strong>Whoops!</strong> There were some problems with your input.<br><br>
-    <ul>
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-</div>
-@endif
-  <div class="d-flex justify-content-center">
-    <div class="card" style="width: 25rem;">
-      <div class="card-header text-center">Edit Category</div>
-      <div class="card-body">
-        <form action="{{ route('cats.update', $cat->id) }}" method="post" >
-          @csrf
-          @method('PUT')
-          <label>Status Code</label><br/>
-          <input type="text" name="catcode" id="catcode" value="{{ $cat->catcode }}" class="form-control"><br/>
-          <label>CATEGORY</label><br/>
-          <input type="text" name="catname" id="catname" value="{{ $cat->catname }}" class="form-control"><br/>
-          <button type="submit" class="btn btn-sm btn-success mt-2">Save</button><br/>
-        </form>
+      <div class="alert alert-danger">
+        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
       </div>
+    @endif
+
+    <div class="row">
+        <div class="col">
+            <div class="card border-primary mb-3 py-3 px-3" style="width: 50rem">
+                <p class="text-center"><b>Category Edit</b></p>                    
+                <form class="w-full max-w-lg md:items-center" action="{{ route('cats.update', $cat->id) }}" method="post" enctype="multipart/form-data">
+                  @csrf
+                  @method('PUT')
+                  <label class="ml-5">Code</label><br/>
+                  <input type="text" name="catcode" id="catcode" value="{{ $cat->catcode }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white"><br/>
+                  <label class="ml-5">Name</label><br/>
+                  <input type="text" name="catname" id="catname" value="{{ $cat->catname }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white"><br/>
+                  <button type="submit" class="rounded-md bg-green hover:bg-green-600 mt-2 px-3 py-2 ml-5">Save</button><br/>
+                </form>
+            </div>
+        </div>              
     </div>
   </div>
 @endsection

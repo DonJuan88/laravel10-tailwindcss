@@ -34,3 +34,4 @@ Route::resource('admin/brands', BrandController::class);
 Route::resource('admin/cats', CatController::class);
 Route::resource('admin/products', ItemController::class);
 Route::resource('admin/status', StatusController::class);
+Route::get('admin/products/{id}', 'ItemController@show');

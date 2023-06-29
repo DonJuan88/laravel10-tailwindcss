@@ -1,66 +1,48 @@
 @extends('layouts.v1.admin.main')
 
 @section('admin')
-  <div class="d-flex justify-content-center">
-    <div class="card" style="width: 25rem;">
-      <div class="card-header text-center">Create New Item</div>
-      <div class="card-body">
-        <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
-          @csrf
-          <div class="form-control mt-2">
-            <label>Code</label><br/>
-            <input type="text" name="code" id="code" class="form-control"><br/>
-          </div>
-          <div class="form-control mt-2">
-            <label>Name</label><br/>
-            <input type="text" name="name" id="name" class="form-control"><br/>
-          </div>
-          <div class="form-control mt-2">
-            <label>Brand</label><br/>
-            <select class="form-control" name="brandcode" id="brandcode" placeholder="Choose Brand">
-              @foreach ($brand as $brands  )
-                <option  value="{{ $brands->brandcode }}">{{ $brands->brandname }}</option>
-              @endforeach
-            </select>       
-          </div>
-          <div class="form-control mt-2">
-            <label>Category</label><br/>
-            <select class="form-control" name="catcode" id="catcode" placeholder="Choose Brand">
-              @foreach ($cat as $cat  )
-                <option  value="{{ $cat->catcode }}">{{ $cat->catname }}</option>
-              @endforeach
-            </select>
-          </div>
-          <div class="form-control mt-2">
-            <label>Base Price</label><br/>
-            <input type="text" name="baseprice" id="baseprice" class="form-control"><br/>
-          </div> 
-          <div class="form-control mt-2">
-            <label>Sale Price</label><br/>
-            <input type="text" name="saleprice" id="saleprice" class="form-control"><br/>
-          </div>
-          <div class="form-control mt-2">
-            <label>Unit</label><br/>
-            <input type="text" name="unit" id="unit" class="form-control"><br/>
-          </div>
-          <div class="form-control mt-2">
-            <label>Stock</label><br/>
-            <input type="text" name="stock" id="stock" class="form-control"><br/>
-          </div>
-          <div class="form-control mt-2">
-            <label>Picture</label><br/>
-            <input type="file" name="image" id="image" class="form-control"><br/>
-          </div>
-          <div class="form-control mt-2">
-            <label>Status</label><br/>
-            <select type="text" name="status" id="status" class="form-control">
-              <option value="1">Active</option>
-              <option value="0">Inactive</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-sm btn-success mt-2">Save</button><br/>
-        </form>
-      </div>
+  <div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card border-primary mb-3 py-3 px-3" style="width:50rem">
+                <p class="text-center mb-3"><b>Product Input</b></p>                    
+                <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
+                  @csrf
+                    <label class="ml-5">Code</label><br/>
+                    <input type="text" name="code" id="code" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" ><br/>
+                    <label class="ml-5">Name</label><br/>
+                    <input type="text" name="name" id="name" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" ><br/>
+                    <label class="ml-5">Brand</label><br/>
+                    <select name="brandcode" id="brandcode" placeholder="Choose Brand" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" >
+                      @foreach ($brand as $brands  )
+                        <option  value="{{ $brands->brandcode }}">{{ $brands->brandname }}</option>
+                      @endforeach
+                    </select>       
+                    <label class="ml-5">Category</label><br/>
+                    <select name="catcode" id="catcode" placeholder="Choose Brand" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" >
+                      @foreach ($cat as $cat  )
+                        <option  value="{{ $cat->catcode }}">{{ $cat->catname }}</option>
+                      @endforeach
+                    </select>
+                    <label class="ml-5">Base Price</label><br/>
+                    <input type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="baseprice" id="baseprice"><br/>
+                    <label class="ml-5">Sale Price</label><br/>
+                    <input type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="saleprice" id="saleprice"><br/>
+                    <label class="ml-5">Unit</label><br/>
+                    <input type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="unit" id="unit"><br/>
+                    <label class="ml-5">Stock</label><br/>
+                    <input type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="stock" id="stock"><br/>
+                    <label class="ml-5">Picture</label><br/>
+                    <input type="file" name="image" id="image" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white"><br/>
+                    <label class="ml-5">Status</label><br/>
+                    <select type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="status" id="status">
+                      <option value="1">Active</option>
+                      <option value="0">Inactive</option>
+                    </select>
+                    <button type="submit" class="rounded-md bg-red text-white font-bold hover:bg-red-400 px-2 py-1 text-sm">Delete</button><br/>
+                </form>
+            </div>
+        </div>              
     </div>
-  </div>
+  </div> 
 @endsection
