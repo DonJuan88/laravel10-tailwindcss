@@ -24,12 +24,12 @@
                 
                         @endif
                         <table class="table-fixed w-full bg-white rounded-lg shadow overflow-hidden">
-                                <thead class="text-sm font-medium text-left text-gray-700 ">
+                                <thead class="text-sm font-medium text-left text-gray-700">
                                     <tr>
                                         <th class="px-4 py-2 w-3">#</th>
-                                        <th class="px-4 py-2">Code</th>
-                                        <th class="px-4 py-2">Brand Name</th>
-                                        <th class="px-4 py-2">Action</th>
+                                        <th class="px-4 py-2 w-12">Code</th>
+                                        <th class="px-4 py-2 w-20">Brand Name</th>
+                                        <th class="px-4 py-2 w-10">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -40,7 +40,7 @@
                                             <td class="px-4 py-2 ">{{ $brand->brandname }}</td>
                                             <td class="px-4 py-2 w-20">
                                                 <form method="POST" action="{{ route('brands.destroy', $brand->id) }}">
-                                                    <a class="bg-blue-300 hover:bg-blue-100 text-white font-bold py-2 px-1 rounded-md te" href="{{ route('brands.edit', $brand->id) }}">  Edit  </a>
+                                                    <a class="bg-blue-300 hover:bg-blue-100 text-white font-bold py-2 px-1 rounded-md text-sm mr-2 ml-2" href="{{ route('brands.edit', $brand->id) }}">  Edit  </a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="rounded-md bg-red text-white font-bold hover:bg-red-400 px-2 py-1 text-sm">Delete</button><br/>
