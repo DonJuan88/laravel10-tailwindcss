@@ -46,7 +46,7 @@
                                             <td class="px-4 py-2">{{ $item->stock }}</td>
                                             <td>
                                                 <form method="POST" action="{{ route('products.destroy', $item->id) }}">
-                                                    <a class="bg-blue-300 hover:bg-blue-100 text-white font-bold py-2 px-1 rounded-md text-sm mr-2 ml-2" href="{{ route('products.edit', $item->id) }} ">  Edit  </a>
+                                                    <button class="rounded-md bg-blue hover:bg-blue-100 text-white font-bold  px-2 mr-2 py-1 text-sm"><a href="{{ route('products.edit', $item->id) }}">  Edit </a> </button>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="rounded-md bg-red text-white font-bold hover:bg-red-400 px-2 py-1 text-sm">Delete</button><br/>

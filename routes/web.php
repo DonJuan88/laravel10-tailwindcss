@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\v1\admin\CatController;
 use App\Http\Controllers\v1\admin\ItemController;
+use App\Http\Controllers\v1\admin\UserController;
 use App\Http\Controllers\v1\admin\BrandController;
 use App\Http\Controllers\v1\admin\StatusController;
 
@@ -34,4 +35,4 @@ Route::resource('admin/brands', BrandController::class);
 Route::resource('admin/cats', CatController::class);
 Route::resource('admin/products', ItemController::class);
 Route::resource('admin/status', StatusController::class);
-Route::get('admin/products/{id}', 'ItemController@show');
+Route::resource('admin/customers', UserController::class);

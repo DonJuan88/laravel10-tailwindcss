@@ -76,11 +76,12 @@ class ItemController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(item $item)
+    public function edit($id)
     {
         $brand = brand::all();
         $cat = cat::all();
-        return view('v1.admin.item.edit', compact('item'))->with(['brand' => $brand, 'cat'=>$cat]);
+        $item = item::find($id);
+        return view('v1.admin.item.edit')->with(['item' =>$item, 'brand' => $brand, 'cat'=>$cat]);
 
     }
 
