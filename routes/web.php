@@ -21,7 +21,7 @@ use App\Http\Controllers\v1\admin\StatusController;
 */
 
 Route::get('/', function () {
-    return view('layouts.v1.admin.main');
+    return view('layouts.v1.user.main');
 });
 
 Route::get('admin/dashboard', function () {
