@@ -7,7 +7,7 @@
         <title>Document</title>
         <link rel="stylesheet" href="/resources/css/style.css">
 		<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-
+		<script src="https://cdn.tailwindcss.com"></script>
 		@vite('resources/css/app.css')
 		@vite('resources/js/app.js')
 

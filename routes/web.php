@@ -1,13 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\v1\admin\CatController;
 use App\Http\Controllers\v1\admin\ItemController;
 use App\Http\Controllers\v1\admin\UserController;
+use App\Http\Controllers\v1\admin\AdminController;
 use App\Http\Controllers\v1\admin\BrandController;
 use App\Http\Controllers\v1\admin\OrderController;
 use App\Http\Controllers\v1\admin\StatusController;
+use App\Http\Controllers\v1\user\LoginRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,8 @@ Route::resource('admin/products', ItemController::class);
 Route::resource('admin/status', StatusController::class);
 Route::resource('admin/customers', UserController::class);
 Route::resource('admin/orders', OrderController::class);
+Route::resource('admin/admins', AdminController::class);
+
 
 Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/register', 'register')->name('register');
