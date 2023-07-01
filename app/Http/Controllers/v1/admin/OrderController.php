@@ -11,8 +11,8 @@ class OrderController extends Controller
 {
     public function index()
    {
-       $order = Order::all()->sortBy('transno');
-       return view('v1.admin.order.index',["title" => "admin" ])->with('order', $order);
+       $order = Order::all()->sortBy('transdate');
+       return view('v1.admin.order.index',["title" => "Order" ])->with('order', $order);
    }
 
    /**
