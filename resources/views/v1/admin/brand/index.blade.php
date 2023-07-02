@@ -16,9 +16,9 @@
                         <br/>
                         @if ($message = Session::get('success'))
 
-                        <div class="alert alert-success">
+                        <div class="alert bg-green-200">
                 
-                            <p class="p text-center">{{ $message }}</p>
+                            <p class="p text-center text-white">{{ $message }}</p>
                 
                         </div>
                 
@@ -40,7 +40,7 @@
                                             <td class="px-4 py-2 ">{{ $brand->brandname }}</td>
                                             <td class="px-4 py-2 w-20">
                                                 <form method="POST" action="{{ route('brands.destroy', $brand->id) }}">
-                                                    <button class="rounded-md bg-blue hover:bg-blue-100 text-white font-bold  px-2 mr-2 py-1 text-sm"><a href="{{ route('brands.edit', $brand->id) }}">  Edit </a> </button>
+                                                    <button class="rounded-md bg-blue hover:bg-blue-100 text-white font-bold  px-2 mr-2 py-1 text-sm"><a href="{{ route('brands.edit', $brand->id) }}">  Edit </a></button>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="rounded-md bg-red text-white font-bold hover:bg-red-400 px-2 py-1 text-sm">Delete</button><br/>

@@ -28,9 +28,7 @@
                                         <td class="px-4 py-2">{{ $order->payment }}</td>                                        
                                         <td class="px-4 py-2">{{ $order->status }}</td>
                                         <td>
-                                            <form method="POST" action="{{ route('status.destroy', $status->id) }}">
-                                                <button class="rounded-md bg-gray hover:bg-gray-dark text-white font-bold  px-2 mr-2 py-1 text-sm"><a href="{{ route('customers.show', $user->id) }}">  Detail </a> </button>
-                                            </form>
+                                            <button class="rounded-md bg-gray hover:bg-gray-dark text-white font-bold  px-2 mr-2 py-1 text-sm"><a href="{{ route('customers.show', $user->id) }}">  Detail </a> </button>
                                         </td>
                                     </tr>    
                                 @endforeach                                    

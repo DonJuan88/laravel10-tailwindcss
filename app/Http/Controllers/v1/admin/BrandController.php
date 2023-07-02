@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\v1\admin\BrandRequest;
 use App\Models\brand;
+use Illuminate\Validation\Rules\Unique;
 
 class BrandController extends Controller
 {
@@ -29,8 +30,8 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'brandcode' =>'required',
-            'brandname' =>'required',
+            'brandcode' =>['required', 'min:3', 'max:6', 'unique:brands'],
+            'brandname' =>['required', 'min:5'],
         ]);
 
         $brand = new Brand;

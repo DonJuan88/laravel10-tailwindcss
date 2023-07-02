@@ -22,9 +22,7 @@
                                             <td class="px-4 py-2 ">{{ $user->name }}</td>                                        
                                             <td class="px-4 py-2 ">{{ $user->email }}</td>
                                             <td class="px-4 py-2 w-20">
-                                                <form method="POST" action="{{ route('status.destroy', $status->id) }}">
-                                                    <button class="rounded-md bg-gray hover:bg-gray-dark text-white font-bold  px-2 mr-2 py-1 text-sm"><a href="{{ route('customers.show', $user->id) }}">  Detail </a> </button>
-                                                </form>
+                                                <button class="rounded-md bg-gray hover:bg-gray-dark text-white font-bold  px-2 mr-2 py-1 text-sm"><a href="{{ route('customers.show', $user->id) }}">  Detail </a> </button>
                                             </td>
                                         </tr>    
                                     @endforeach                                    

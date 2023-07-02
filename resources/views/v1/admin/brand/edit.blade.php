@@ -1,15 +1,15 @@
 @extends('layouts.v1.admin.main')
 
 @section('admin')
-
-  <div class="container">
+  <div class="container">  
+    <button class="rounded-md content-center bg-gray text-white hover:bg-gray-600 mt-1 px-2 py-1 w-15 ml-5"><a href="{{ url('admin/brands') }}">Back</a></button><br/>
+          
     @if ($errors->any())
-
-      <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+      <div class="">
+        <p class="text-red bg-red-200 ml-5"><strong>Whoops!</strong> There were some problems with your input.<p><br>
         <ul>
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <li class="text-red bg-red-200 ml-5">{{ $error }}</li>
             @endforeach
         </ul>
       </div>
@@ -23,9 +23,19 @@
                   @csrf
                   @method('PUT')
                   <label class="ml-5">Code</label><br/>
-                  <input type="text" name="brandcode" id="brandcode" value="{{ $brand->brandcode }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white"><br/>
+                  <input type="text" name="brandcode" id="brandcode" value="{{ $brand->brandcode }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('brandcode') is-invalid border-red @enderror" value="{{ old('brandcode') }}">
+                  @error('brandcode')
+                    <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
+                      Invalid Brand Code field !
+                    </span>                  
+                  @enderror<br/>
                   <label class="ml-5">Name</label><br/>
-                  <input type="text" name="brandname" id="brandname" value="{{ $brand->brandname }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white"><br/>
+                  <input type="text" name="brandname" id="brandname" value="{{ $brand->brandname }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('brandcode') is-invalid border-red @enderror" value="{{ old('brandcode') }}">
+                  @error('brandcode')
+                    <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
+                      Invalid Brand Name field !
+                    </span>                  
+                  @enderror<br/>
                   <button type="submit" class="rounded-md bg-green hover:bg-green-600 mt-2 px-3 py-2 ml-5">Save</button><br/>
                 </form>
             </div>
