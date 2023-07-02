@@ -38,7 +38,7 @@
                                             <td class="px-4 py-2 ">{{ $admin->username }}</td>                                        
                                             <td class="px-4 py-2 ">{{ $admin->password }}</td>
                                             <td class="px-4 py-2 w-20">
-                                                <form method="POST" action="{{ route('brands.destroy', $admin->id) }}">
+                                                <form method="POST" action="{{ route('admins.destroy', $admin->id) }}">
                                                     <button class="rounded-md bg-blue hover:bg-blue-100 text-white font-bold  px-2 mr-2 py-1 text-sm"><a href="{{ route('admins.edit', $admin->id) }}">  Edit </a> </button>
                                                     @csrf
                                                     @method('DELETE')

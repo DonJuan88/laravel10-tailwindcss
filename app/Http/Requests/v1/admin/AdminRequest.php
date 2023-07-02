@@ -3,6 +3,7 @@
 namespace App\Http\Requests\v1\admin;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Hash;
 
 class AdminRequest extends FormRequest
 {
@@ -22,8 +23,10 @@ class AdminRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'username' => ['required', 'min:6'],
+            'username' => ['required', 'min:6', 'unique:admins'],
             'password' => ['required', 'min:8']
         ];
+
+ 
     }
 }

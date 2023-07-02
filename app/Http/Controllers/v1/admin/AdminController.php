@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\admin;
 use App\Http\Requests\v1\admin\AdminRequest;
-
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -30,16 +30,16 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'username' =>'required',
+            'username' =>['required', 'max:24', 'min:6', 'unique:admins'],
             'password' =>'required',
         ]);
 
         $admin = new Admin;
         $admin->username = $request->input('username');
-        $admin->password = $request->input('password');
+        $admin->password = hash::make($request->input('password'));
         $admin->save();
 
-        return redirect('/admin/accounts')->with('success','Admin Created');
+        return redirect('/admin/admins')->with('success','Admin Created');
     }
 
     /**
@@ -56,18 +56,28 @@ class AdminController extends Controller
      */
     public function edit(admin $admin)
     {
+        
     
-        return view('v1.admin.account', compact('admin'));
+        return view('v1.admin.account.edit', compact('admin'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(AdminRequest $request, Admin $admin)
+    public function update(Request $request, $id)
     {   
+        $this->validate($request,[
+            'username' =>['required', 'max:24', 'min:6', 'unique:admins'],
+            'password' =>'required',
+        ]);
 
-            $admin -> update($request->validated());         
-            return redirect('/admin/admins')->with('success','admin Updated');
+        $admin = Admin::findorfail($id);
+        $admin->password=Hash::make($request->password);
+        $admin->username=$request->username;
+        $admin->email=$request->email;
+        $admin->save();
+        
+        return redirect('/admin/admins')->with('success','admin Updated');
     }
 
     /**

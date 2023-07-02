@@ -11,9 +11,15 @@
               <form class="w-full max-w-lg md:items-center" action="{{ route('admins.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <label class="ml-5">Username</label><br/>
-                <input type="text" name="username" id="username" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white"><br/>
+                <input type="text" name="username" id="username" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('text') is-invalid @enderror is-invalid"><br/>
+                  @error('title')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                  @enderror
                 <label class="ml-5">Password</label><br/>
-                <input type="password" name="password" id="password" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white"><br/>
+                <input type="password" name="password" id="password" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('email') is-invalid @enderror"><br/>
+                  @error('title')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                  @enderror
                 <button type="submit" class="rounded-md content-center bg-green hover:bg-green-600 mt-2 px-3 py-2 w-20">Save</button><br/>
               </form>
           </div>
