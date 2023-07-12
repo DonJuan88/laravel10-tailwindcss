@@ -23,14 +23,14 @@
                   @csrf
                   @method('PUT')
                   <label class="ml-5">Code</label><br/>
-                  <input type="text" name="catcode" id="catcode" value="{{ $cat->catcode }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white@error('brandcode') is-invalid border-red @enderror" value="{{ old('catcode') }}">
+                  <input type="text" name="catcode" id="catcode" value="{{ $cat->catcode }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('catcode') is-invalid border-red @enderror" value="{{ old('catcode') }}">
                   @error('catcode')
                     <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
                       Invalid Category Code field !
                     </span>                  
                   @enderror<br/>
                   <label class="ml-5">Name</label><br/>
-                  <input type="text" name="catname" id="catname" value="{{ $cat->catname }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white@error('brandcode') is-invalid border-red @enderror" value="{{ old('catname') }}">
+                  <input type="text" name="catname" id="catname" value="{{ $cat->catname }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('catname') is-invalid border-red @enderror" value="{{ old('catname') }}">
                   @error('catname')
                     <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
                       Invalid Category Name field !
