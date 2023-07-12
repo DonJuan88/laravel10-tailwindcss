@@ -22,7 +22,7 @@ class BrandRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'brandcode' => ['required', 'min:3','unique:brands'],
+            'brandcode' => ['required', 'min:3'],
             'brandname' => ['required', 'min:5']
         ];
     }

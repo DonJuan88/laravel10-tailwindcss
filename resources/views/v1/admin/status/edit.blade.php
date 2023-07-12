@@ -25,7 +25,7 @@
                   <input type="text" name="code" id="code" value="{{ $status->code }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white"><br/>
                   <label class="ml-5">Name</label><br/>
                   <input type="text" name="status" id="status" value="{{ $status->status }}" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white"><br/>
-                  <button type="submit" class="rounded-md bg-green hover:bg-green-600 mt-2 px-3 py-2 ml-5">Save</button><br/>
+                  <button type="submit" class="rounded-md bg-green hover:bg-green-600  mt-2 px-3 py-2 w-20 ml-36">Save</button><br/>
                 </form>
             </div>
         </div>              

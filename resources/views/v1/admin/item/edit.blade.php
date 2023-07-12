@@ -40,7 +40,7 @@
                       <option value="1">Active</option>
                       <option value="0">Inactive</option>
                     </select>
-                    <button type="submit" class="rounded-md bg-green hover:bg-green-600 mt-2 px-3 py-2 ml-5">Save</button><br/>
+                    <button type="submit" class="rounded-md bg-green hover:bg-green-600  mt-2 px-3 py-2 w-20 ml-36">Save</button><br/>
                 </form>
             </div>
         </div>              

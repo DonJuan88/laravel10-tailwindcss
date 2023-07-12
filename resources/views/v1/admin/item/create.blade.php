@@ -39,7 +39,7 @@
                       <option value="1">Active</option>
                       <option value="0">Inactive</option>
                     </select>
-                    <button type="submit" class="rounded-md bg-red text-white font-bold hover:bg-red-400 px-2 py-1 text-sm">Delete</button><br/>
+                    <button type="submit" class="rounded-md bg-green hover:bg-green-600  mt-2 px-3 py-2 w-20 ml-36">Save</button><br/>
                 </form>
             </div>
         </div>              

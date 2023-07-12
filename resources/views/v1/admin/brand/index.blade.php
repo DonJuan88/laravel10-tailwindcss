@@ -16,7 +16,7 @@
                         <br/>
                         @if ($message = Session::get('success'))
 
-                        <div class="alert bg-green-200">
+                        <div class="alert bg-green-600">
                 
                             <p class="p text-center text-white">{{ $message }}</p>
                 
@@ -43,7 +43,7 @@
                                                     <button class="rounded-md bg-blue hover:bg-blue-100 text-white font-bold  px-2 mr-2 py-1 text-sm"><a href="{{ route('brands.edit', $brand->id) }}">  Edit </a></button>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="rounded-md bg-red text-white font-bold hover:bg-red-400 px-2 py-1 text-sm">Delete</button><br/>
+                                                    <button type="submit" class="rounded-md bg-red text-white font-bold hover:bg-red-400 px-2 py-1 text-sm" onclick="return confirm(&quot;Sure to delete ?&quot;)">Delete</button><br/>
                                                 </form>
                                             </td>
                                         </tr>    

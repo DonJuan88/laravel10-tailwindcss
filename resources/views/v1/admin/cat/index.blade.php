@@ -15,9 +15,9 @@
                         <br/>
                         @if ($message = Session::get('success'))
 
-                        <div class="alert alert-success">
+                        <div class="alert bg-green-600">
                 
-                            <p class="p text-center">{{ $message }}</p>
+                            <p class="p text-center text-white">{{ $message }}</p>
                 
                         </div>
                 

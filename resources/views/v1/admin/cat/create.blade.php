@@ -21,20 +21,20 @@
                 <form class="w-full max-w-lg md:items-center" action="{{ route('cats.store') }}" method="post" enctype="multipart/form-data">
                   @csrf
                   <label class="ml-5">Code</label><br/>
-                  <input type="text" name="catcode" id="catcode" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('brandcode') is-invalid border-red @enderror" value="{{ old('catcode') }}">
+                  <input type="text" name="catcode" id="catcode" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('catcode') is-invalid border-red @enderror" value="{{ old('catcode') }}">
                   @error('catcode')
                     <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
                       Invalid Category Code field !
                     </span>                  
                   @enderror<br/>
                   <label class="ml-5">Name</label><br/>
-                  <input type="t=ext" name="catname" id="catname" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white@error('brandcode') is-invalid border-red @enderror" value="{{ old('catname') }}">
+                  <input type="text" name="catname" id="catname" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('catname') is-invalid border-red @enderror" value="{{ old('catname') }}">
                   @error('catname')
                     <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
                       Invalid Category Name field !
                     </span>                  
                   @enderror<br/>
-                  <button type="submit" class="rounded-md content-center bg-green hover:bg-green-600 mt-2 px-3 py-2 w-20">Save</button><br/>
+                  <button type="submit" class="rounded-md content-center bg-green hover:bg-green-600  mt-2 px-3 py-2 w-20 ml-36">Save</button><br/>
                 </form>
             </div>
         </div>              

@@ -36,7 +36,7 @@
                       Invalid Category Name field !
                     </span>                  
                   @enderror<br/>
-                  <button type="submit" class="rounded-md bg-green hover:bg-green-600 mt-2 px-3 py-2 ml-5">Save</button><br/>
+                  <button type="submit" class="rounded-md bg-green hover:bg-green-600  mt-2 px-3 py-2 w-20 ml-36">Save</button><br/>
                 </form>
             </div>
         </div>              
