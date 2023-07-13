@@ -37,7 +37,7 @@
                                     @foreach ($item as $item )
                                         <tr class="hover:bg-gray-100 border-b border-gray-200 ">
                                             <td class="px-4 py-2">{{ $loop->iteration }}</td>
-                                            <td class="px-4 py-3"><img class="object-contain h-20 w-20" src="{{ Storage::url($item->image) }}"  /></td>
+                                            <td class="px-4 py-3"><img class="max-w-full rounded-full h-20 w-20" src="{{ asset('/storage/app/' .$item->image) }}"  /></td>
                                             <td class="px-4 py-2">{{ $item->code }}</td>                                        
                                             <td class="px-4 py-2">{{ $item->name }}</td> 
                                             <td class="px-4 py-2">{{ $item->brandcode }}</td>                                                         

@@ -5,6 +5,16 @@
     <div class="row">
         <div class="col">
             <div class="card border-primary mb-3 py-3 px-3" style="width:50rem">
+              @if ($errors->any())
+                <div class="">
+                  <p class="text-red bg-red-200 ml-5"><strong>Whoops!</strong> There were some problems with your input.<p><br>
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li class="text-red bg-red-200 ml-5">{{ $error }}</li>
+                      @endforeach
+                  </ul>
+                </div>
+              @endif
                 <p class="text-center mb-3"><b>Product Input</b></p>                    
                 <form action="{{ route('products.update', $item->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
