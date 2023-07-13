@@ -9,9 +9,9 @@
                 <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
                   @csrf
                     <label class="ml-5">Code</label><br/>
-                    <input type="text" name="code" id="code" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('code') is-invalid border-red @enderror" value="{{ old('code') }}" ><br/>
+                    <input type="text" name="code" id="code" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" ><br/>
                     <label class="ml-5">Name</label><br/>
-                    <input type="text" name="name" id="name" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('name') is-invalid border-red @enderror" value="{{ old('name') }}" ><br/>
+                    <input type="text" name="name" id="name" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" ><br/>
                     <label class="ml-5">Brand</label><br/>
                     <select name="brandcode" id="brandcode" placeholder="Choose Brand" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" >
                       @foreach ($brand as $brands  )
@@ -25,26 +25,17 @@
                       @endforeach
                     </select>
                     <label class="ml-5">Base Price</label><br/>
-                    <input type="text" name="baseprice" id="baseprice" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('baseprice') is-invalid border-red @enderror" value="{{ old('baseprice') }}"><br/>
-                    @error('')
-                      <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
-                      {{ $message }}
-                      </span> 
-                    @enderror
+                    <input type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="baseprice" id="baseprice"><br/>
                     <label class="ml-5">Sale Price</label><br/>
-                    <input type="text" name="saleprice" id="saleprice" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('saleprice') is-invalid border-red @enderror" value="{{ old('saleprice') }}"><br/>
-                    
+                    <input type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="saleprice" id="saleprice"><br/>
                     <label class="ml-5">Unit</label><br/>
-                    <input type="text" name="unit" id="unit" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('unit') is-invalid border-red @enderror" value="{{ old('unit') }}"><br/>
-                    
+                    <input type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="unit" id="unit"><br/>
                     <label class="ml-5">Stock</label><br/>
-                    <input type="text" name="stock" id="stock" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('stock') is-invalid border-red @enderror" value="{{ old('stock') }}"><br/>
-                    
+                    <input type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="stock" id="stock"><br/>
                     <label class="ml-5">Picture</label><br/>
                     <input type="file" name="image" id="image" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white"><br/>
-                    
                     <label class="ml-5">Status</label><br/>
-                    <select type="text" name="status" id="status" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white">
+                    <select type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="status" id="status">
                       <option value="1">Active</option>
                       <option value="0">Inactive</option>
                     </select>

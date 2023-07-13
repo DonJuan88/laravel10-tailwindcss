@@ -29,7 +29,7 @@ class CatController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'catcode' => ['required','min:4', 'max:4', 'unique:cats'],
+            'catcode' => ['required','min:4', 'max:4', 'unique:cat'],
             'catname' => ['required', 'min:6']
         ]);
 
