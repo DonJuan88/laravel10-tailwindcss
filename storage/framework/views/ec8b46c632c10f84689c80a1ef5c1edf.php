@@ -37,7 +37,7 @@
                                     <?php $__currentLoopData = $item; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr class="hover:bg-gray-100 border-b border-gray-200 ">
                                             <td class="px-4 py-2"><?php echo e($loop->iteration); ?></td>
-                                            <td class="px-4 py-3"><img class="max-w-full rounded-full h-20 w-20" src="<?php echo e(asset('/storage/app/' .$item->image)); ?>"  /></td>
+                                            <td class="px-4 py-3"><img class="max-w-full rounded-full h-20 w-20" src="<?php echo e(asset('storage/app/' .$item->image)); ?>"  /></td>
                                             <td class="px-4 py-2"><?php echo e($item->code); ?></td>                                        
                                             <td class="px-4 py-2"><?php echo e($item->name); ?></td> 
                                             <td class="px-4 py-2"><?php echo e($item->brandcode); ?></td>                                                         

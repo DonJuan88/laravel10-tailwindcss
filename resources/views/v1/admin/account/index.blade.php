@@ -27,17 +27,17 @@
                                 <thead class="text-sm font-medium text-left text-gray-700">
                                     <tr>
                                         <th class="px-4 py-2 w-3">#</th>
-                                        <th class="px-4 py-2 w-12">Username</th>
-                                        <th class="px-4 py-2 w-20">Password</th>
+                                        <th class="px-4 py-2 w-22">Username</th>
+                                        <th class="px-15 py-2 w-25">Password</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($admin as $admin )
                                         <tr class="hover:bg-gray-100 border-b border-gray-200 ">
                                             <td class="px-4 py-2 ">{{ $loop->iteration }}</td>
-                                            <td class="px-4 py-2 ">{{ $admin->username }}</td>                                        
-                                            <td class="px-4 py-2 ">{{ $admin->password }}</td>
-                                            <td class="px-4 py-2 w-20">
+                                            <td class="px-15 py-2 w-22">{{ $admin->username }}</td>                                        
+                                            <td class="px-15 py-2 w-20">{{ Str::limit($admin->password, 10) }}</td>
+                                            <td class="px-4 py-2 w-5">
                                                 <form method="POST" action="{{ route('admins.destroy', $admin->id) }}">
                                                     <button class="rounded-md bg-blue hover:bg-blue-100 text-white font-bold  px-2 mr-2 py-1 text-sm"><a href="{{ route('admins.edit', $admin->id) }}">  Edit </a> </button>
                                                     @csrf

@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
         <div class="col">
-            <div class="card border-primary mb-3 py-3 px-3" style="width:50rem">
+            <div class="card border-primary mb-1 py-3 px-3" style="width:50rem">
               @if ($errors->any())
                 <div class="">
                   <p class="text-red bg-red-200 ml-5"><strong>Whoops!</strong> There were some problems with your input.<p><br>
@@ -19,14 +19,14 @@
                 <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
                   @csrf
                     <label class="ml-5">Code</label><br/>
-                    <input type="text" name="code" id="code" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('code') is-invalid border-red @enderror" value="{{ old('code') }}" ><br/>
+                    <input type="text" name="code" id="code" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-1 ml-5 leading-tight focus:outline-none focus:bg-white @error('code') is-invalid border-red @enderror" value="{{ old('code') }}" ><br/>
                     @error('code')
                       <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
                         {{ $message }}
                       </span>                  
                     @enderror<br/>
                     <label class="ml-5">Name</label><br/>
-                    <input type="text" name="name" id="name" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('name') is-invalid border-red @enderror" value="{{ old('name') }}" ><br/>
+                    <input type="text" name="name" id="name" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-1 ml-5 leading-tight focus:outline-none focus:bg-white @error('name') is-invalid border-red @enderror" value="{{ old('name') }}" ><br/>
                     @error('name')
                       <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
                         {{ $message }}
@@ -59,14 +59,14 @@
                       </span>                  
                     @enderror<br/>
                     <label class="ml-5">Unit</label><br/>
-                    <input type="text" name="unit" id="unit" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('unit') is-invalid border-red @enderror" value="{{ old('unit') }}"><br/>
+                    <input type="text" name="unit" id="unit" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-2 ml-5 leading-tight focus:outline-none focus:bg-white @error('unit') is-invalid border-red @enderror" value="{{ old('unit') }}"><br/>
                     @error('unit')
                       <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
                         {{ $message }}
                       </span>                  
                     @enderror<br/>
                     <label class="ml-5">Stock</label><br/>
-                    <input type="text" name="stock" id="stock" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white @error('stock') is-invalid border-red @enderror" value="{{ old('stock') }}" ><br/>
+                    <input type="text" name="stock" id="stock" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-2 ml-5 leading-tight focus:outline-none focus:bg-white @error('stock') is-invalid border-red @enderror" value="{{ old('stock') }}" ><br/>
                     @error('stock')
                       <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
                         {{ $message }}
