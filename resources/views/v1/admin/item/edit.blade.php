@@ -20,9 +20,19 @@
                     @csrf
                     @method('PUT')
                     <label class="ml-5">Code</label><br/>
-                    <input type="text"  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="code" id="code" value="{{ $item->code }}"><br/>
+                    <input type="text" name="code" id="code" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" value="{{ $item->code }}"><br/>
+                    @error('code')
+                      <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
+                        {{ $message }}
+                      </span>                  
+                    @enderror<br/>
                     <label class="ml-5">Name</label><br/>
-                    <input type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="name" id="name" value="{{ $item->name }}"><br/>
+                    <input type="text"name="name" id="name" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" value="{{ $item->name }}"><br/>
+                    @error('name')
+                      <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
+                        {{ $message }}
+                      </span>                  
+                    @enderror<br/>
                     <label class="ml-5">Brand</label><br/>
                     <select name="brandcode" id="brandcode" placeholder="Choose Brand" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" >
                       @foreach ($brand as $brands  )
@@ -36,15 +46,35 @@
                       @endforeach
                     </select>
                     <label class="ml-5">Base Price</label><br/>
-                    <input type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="baseprice" id="baseprice" value="{{ $item->baseprice }}"><br/>
+                    <input type="text" name="baseprice" id="baseprice" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" value="{{ $item->baseprice }}"><br/>
+                    @error('baseprice')
+                      <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
+                        {{ $message }}
+                      </span>                  
+                    @enderror<br/>
                     <label class="ml-5">Sale Price</label><br/>
-                    <input type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="saleprice" id="saleprice" value="{{ $item->saleprice }}"><br/>
+                    <input type="text" name="saleprice" id="saleprice" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" value="{{ $item->saleprice }}"><br/>
+                    @error('saleprice')
+                      <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
+                        {{ $message }}
+                      </span>                  
+                    @enderror<br/>
                     <label class="ml-5">Unit</label><br/>
-                    <input type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="unit" id="unit" value="{{ $item->unit }}"><br/>
+                    <input type="text"name="unit" id="unit" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" value="{{ $item->unit }}"><br/>
+                    @error('unit')
+                      <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
+                        {{ $message }}
+                      </span>                  
+                    @enderror<br/>
                     <label class="ml-5">Stock</label><br/>
-                    <input type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="stock" id="stock" value="{{ $item->stock }}"><br/>
+                    <input type="text" name="stock" id="stock" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" value="{{ $item->stock }}"><br/>
+                    @error('stock')
+                      <span class="flex items-center font-medium tracking-wide text-red-500 text-xs ml-5">
+                        {{ $message }}
+                      </span>                  
+                    @enderror<br/>
                     <label class="ml-5">Picture</label><br/>
-                    <input type="file" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="image" id="image" value="{{ url($item->baseprice) }}"><br/>
+                    <input type="file" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="image" id="image" value="{{ url($item->image) }}"><br/>
                     <label class="ml-5">Status</label><br/>
                     <select type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 ml-5 leading-tight focus:outline-none focus:bg-white" name="status" id="status">
                       <option value="1">Active</option>
