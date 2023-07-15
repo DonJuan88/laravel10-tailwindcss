@@ -47,9 +47,15 @@
             <label>Status</label><br/>
             <input type="text" name="status" id="status" class="form-control" value="{{ $item->status }}" disabled><br/>   
           </div>
-          <button type="submit" class="btn btn-success mt-2">Save</button><br/>
+          <button type="submit" class="btn btn-success mt-2" onclick="del_">Save</button><br/>
         </form>
       </div>
     </div>
   </div>
 @endsection
+
+<script>
+    function del(){
+      
+    }
+</script>

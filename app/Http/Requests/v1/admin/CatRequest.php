@@ -22,7 +22,7 @@ class CatRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'catcode' => ['required', 'min:3'],
+            'catcode' => ['required', 'min:4', 'max:4'],
             'catname' => ['required', 'min:5']
         ];
     }

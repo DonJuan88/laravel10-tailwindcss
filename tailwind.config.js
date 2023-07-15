@@ -18,6 +18,7 @@ export default {
       'sky' : '#7dd3fc',
       'purple': '#d8b4fe',
       'pink': '#fbcfe8',
+      'cyan' : '#a5f3fc',
       'orange': '#ff7849',
       'green': '#4ade80',
       'yellow': '#ffc82c',
@@ -25,7 +26,9 @@ export default {
       'gray': '#8492a6',
       'gray-light': '#d3dce6',
       'red' : '#b91c1c',
-      'white': '#fafafa'
+      'white': '#fafafa',
+      'black' : '#0a0a0a',
+      'shadow' : '#fafaf5' 
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],

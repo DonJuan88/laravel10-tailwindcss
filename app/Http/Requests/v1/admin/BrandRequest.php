@@ -23,7 +23,7 @@ class BrandRequest extends FormRequest
     {
         return [
             'brandcode' => ['required', 'min:3'],
-            'brandname' => ['required', 'min:8']
+            'brandname' => ['required', 'min:5']
         ];
     }
 }
